@@ -35,7 +35,7 @@ def main():
     params = {
         "q": city_name,
         "appid": api_key,
-        "units": metric",
+        "units": "metric",  # 👈 ここがバグの原因です（最初の " が抜けています）
         "lang": "ja"
     }
 
