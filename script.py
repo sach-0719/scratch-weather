@@ -31,7 +31,7 @@ def main():
     # ========================================================
     city_name = "Tokyo"
     # 👇 ここを以下の形に書き換えます（f-stringを使わず、間違いを防ぐ形にします）
-    url = "https://openweathermap.org"
+    url = "https://api.openweathermap.org/data/2.5/weather"
     params = {
         "q": city_name,
         "appid": api_key,
