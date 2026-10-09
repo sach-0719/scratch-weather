@@ -30,14 +30,21 @@ def main():
     # 🌤️ 2. OpenWeatherMapから「東京」の天気を取得
     # ========================================================
     city_name = "Tokyo"
-    url = f"https://openweathermap.org{city_name}&appid={api_key}&units=metric&lang=ja"
+    # 👇 ここを以下の形に書き換えます（f-stringを使わず、間違いを防ぐ形にします）
+    url = "https://openweathermap.org"
+    params = {
+        "q": city_name,
+        "appid": api_key,
+        "units": metric",
+        "lang": "ja"
+    }
 
     try:
         print(f"📡 OpenWeatherMapから {city_name} の天気を取得中...")
-        response = requests.get(url)
+        response = requests.get(url, params=params) # 👈 params=params を追加
         response.raise_for_status()
         data = response.json()
-        
+
         # 3桁の天気IDと、整数にした気温を取得
         weather_id = data["weather"][0]["id"] # 配列の1番目から正確に取得
         temp = int(data["main"]["temp"])       
