@@ -30,6 +30,7 @@ jobs:
       env:
         OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         SCRATCH_USERNAME: ${{ secrets.SCRATCH_USERNAME }}
+        SCRATCH_PASSWORD: ${{ secrets.SCRATCH_PASSWORD }}
         SCRATCH_SESSION_ID: ${{ secrets.SCRATCH_SESSION_ID }}
         SCRATCH_PROJECT_ID: ${{ secrets.SCRATCH_PROJECT_ID }} # 👈 この1行を追加して更新！
       run: python script.py
