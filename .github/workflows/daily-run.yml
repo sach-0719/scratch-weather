@@ -25,10 +25,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests scratchattach
 
+    # （上の手順は省略）
     - name: Run script
-      # 🔐 ここでGitHubに預けたSecretをPythonの環境変数として注入します
       env:
+        OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         SCRATCH_USERNAME: ${{ secrets.SCRATCH_USERNAME }}
-        SCRATCH_PASSWORD: ${{ secrets.SCRATCH_PASSWORD }}
-        OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }} # 👈 これを追加
+        SCRATCH_SESSION_ID: ${{ secrets.SCRATCH_SESSION_ID }} # 👈 これを追加
       run: python script.py
+
